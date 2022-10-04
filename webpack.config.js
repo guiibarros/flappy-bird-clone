@@ -6,23 +6,23 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
-  entry: path.resolve(__dirname, 'src', 'index.js'),
+  entry: path.resolve(__dirname, 'src', 'index.ts'),
   output: {
-    filename: 'game.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true
   },
   resolve: {
-    extensions: ['.js']
+    extensions: ['.js', '.ts']
   },
   module: {
     rules: [
       {
-        test: /\*.js$/,
+        test: /\.(j|t)s$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-        }
+          loader: 'babel-loader'
+        },
       }
     ]
   },
