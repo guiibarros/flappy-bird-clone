@@ -53,7 +53,7 @@ export class Bird implements IGameObject {
   public init(): void {
     this.spriteSheet = new Image();
     this.spriteSheet.src = 'assets/spritesheet.png';
-    this.floor = Engine.getGameObject<Floor>('Floor');
+    this.floor = Engine.getGameObject(Floor);
 
     gameScreen.addEventListener('click', () => {
       switch(State.current) {

@@ -9,8 +9,10 @@ export class Engine {
     Engine.gameObjects.push(...objects);
   }
 
-  public static getGameObject<T = IGameObject>(objectName: string): T {
-    return this.gameObjects.find(gameObject => gameObject.constructor.name === objectName) as T;
+  public static getGameObject<T extends IGameObject>(gameObjectConstructor: T | any): T {
+    return this.gameObjects.find(
+      gameObject => gameObject instanceof gameObjectConstructor
+    ) as T;
   }
 
   private static draw(): void {
