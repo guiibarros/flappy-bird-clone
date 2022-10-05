@@ -27,7 +27,7 @@ export class Pipes implements IGameObject {
   public init(): void {
     this.spriteSheet = new Image();
     this.spriteSheet.src = 'assets/spritesheet.png';
-    this.bird = Engine.getGameObject<Bird>('Bird');
+    this.bird = Engine.getGameObject(Bird);
   }
 
   public draw(): void {
