@@ -1,6 +1,6 @@
 # Flappy Bird Clone
 
-Flappy bird clone created with Html, Css and JavaScript.
+Flappy bird clone created with Html canvas and TypeScript.
 
 ## Run the app:
 
