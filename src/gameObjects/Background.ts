@@ -27,5 +27,29 @@ export class Background implements IGameObject {
       this.width,
       this.height
     );
+
+    context.drawImage(
+      this.spriteSheet,
+      this.sX,
+      this.sY,
+      this.width,
+      this.height,
+      this.x + this.width,
+      this.y,
+      this.width,
+      this.height
+    );
+
+    context.drawImage(
+      this.spriteSheet,
+      this.sX,
+      this.sY,
+      this.width,
+      this.height,
+      this.x + this.width * 2,
+      this.y,
+      this.width,
+      this.height
+    );
   }
 };

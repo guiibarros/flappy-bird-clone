@@ -50,6 +50,54 @@ export class Floor implements IGameObject {
       this.width,
       this.height
     );
+
+    context.drawImage(
+      this.spriteSheet,
+      this.sX,
+      this.sY,
+      this.width,
+      this.height,
+      this.x + this.width * 2,
+      this.y,
+      this.width,
+      this.height
+    );
+
+    context.drawImage(
+      this.spriteSheet,
+      this.sX,
+      this.sY,
+      this.width,
+      this.height,
+      this.x + this.width * 3,
+      this.y,
+      this.width,
+      this.height
+    );
+
+    context.drawImage(
+      this.spriteSheet,
+      this.sX,
+      this.sY,
+      this.width,
+      this.height,
+      this.x + this.width * 4,
+      this.y,
+      this.width,
+      this.height
+    );
+
+    context.drawImage(
+      this.spriteSheet,
+      this.sX,
+      this.sY,
+      this.width,
+      this.height,
+      this.x + this.width * 5,
+      this.y,
+      this.width,
+      this.height
+    );
   }
 
   public update(): void {
