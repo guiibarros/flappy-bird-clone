@@ -7,8 +7,8 @@ import { Floor } from './Floor';
 
 export class Bird implements IGameObject {
   // Position and scale Properties
-  private x = gameScreen.width / 3;
-  private y = gameScreen.height / 3;
+  private x: number;
+  private y: number;
   private width = 34;
   private height = 24;
 
@@ -54,6 +54,13 @@ export class Bird implements IGameObject {
     this.spriteSheet = new Image();
     this.spriteSheet.src = 'assets/spritesheet.png';
     this.floor = Engine.getGameObject(Floor);
+    this.y = gameScreen.height / 3;
+
+    if (window.outerWidth <= 720) {
+      this.x = 100;
+    } else {
+      this.x = gameScreen.width / 2;
+    }
 
     gameScreen.addEventListener('click', () => {
       switch(State.current) {
@@ -71,6 +78,14 @@ export class Bird implements IGameObject {
         }
       }
     });
+
+    window.addEventListener('resize', () => {
+      if (window.outerWidth <= 720) {
+        this.x = 100;
+      } else {
+        this.x = gameScreen.width / 2;
+      }
+    })
   }
 
   public draw(): void {

@@ -9,10 +9,11 @@ export class Pipes implements IGameObject {
   // Properties in the canvas
   private width = 52;
   private height = 400;
-  private gap = 100;
+  private gap = 85;
   private xSpeed = 2;
-  private pipesGenerationInterval = 120; // frames interval
+  private pipesGenerationInterval = 100; // frames interval
   private instances = [];
+  private generationOriginX = gameScreen.width;
 
   // Animation
   private sprites = [
@@ -28,6 +29,10 @@ export class Pipes implements IGameObject {
     this.spriteSheet = new Image();
     this.spriteSheet.src = 'assets/spritesheet.png';
     this.bird = Engine.getGameObject(Bird);
+
+    if (window.outerWidth <= 720) {
+      this.generationOriginX = gameScreen.width / 2;
+    }
   }
 
   public draw(): void {
@@ -91,7 +96,7 @@ export class Pipes implements IGameObject {
   private generatePipes(): void {
     if (Engine.framesCount % this.pipesGenerationInterval === 0) {
       this.instances.push({
-        x: gameScreen.width * 1.5,
+        x: this.generationOriginX,
         y: Math.floor(Math.random() * (-125 + 325) - 325)
       });
     }
