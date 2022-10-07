@@ -14,13 +14,15 @@
       }
 
       body {
+        background-color: #cbcbd1;
+      }
+
+      .container {
         display: flex;
         height: 100vh;
         justify-content: center;
         align-items: center;
         overflow-x: hidden;
-
-        background-color: #cbcbd1;
       }
 
       #gameScreen {
@@ -32,13 +34,15 @@
       }
 
       @media screen and (max-width: 720px) {
-        body {
+        .container {
           justify-content: flex-start;
         }
       }
     </style>
   </head>
   <body>
-    <canvas width='828' height='512' id='gameScreen'></canvas>
+    <div class="container">
+      <canvas width='828' height='512' id='gameScreen'></canvas>
+    </div>
   </body>
 </html>
