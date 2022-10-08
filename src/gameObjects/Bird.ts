@@ -65,9 +65,9 @@ export class Bird implements IGameObject {
     gameScreen.addEventListener('click', () => {
       switch(State.current) {
         case stateMachine.ready: {
-    
           State.current = stateMachine.start;
-    
+          
+          gameScreen.parentElement.requestFullscreen();
           this.flap();
           break;
         }
