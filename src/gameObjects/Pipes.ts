@@ -33,6 +33,14 @@ export class Pipes implements IGameObject {
     if (window.outerWidth <= 720) {
       this.generationOriginX = gameScreen.width / 2;
     }
+
+    window.addEventListener('resize', () => {
+      if (window.outerWidth <= 720) {
+        this.generationOriginX = gameScreen.width / 2;
+      } else {
+        this.generationOriginX = gameScreen.width;
+      }
+    });
   }
 
   public draw(): void {
