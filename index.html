@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Flappy Bird Web</title><style>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #cbcbd1;
+      }
+
+      .container {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+      }
+
+      #gameScreen {
+        background-color: rgb(98, 195, 207);
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+
+        height: 100%;
+      }
+
+      @media screen and (max-width: 720px) {
+        .container {
+          justify-content: flex-start;
+        }
+      }</style><script defer="defer" src="bundle.js"></script></head><body><div class="container"><canvas width="828" height="512" id="gameScreen"></canvas></div></body></html>
